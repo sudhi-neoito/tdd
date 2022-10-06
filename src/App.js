@@ -1,25 +1,56 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import { useState } from "react";
 
-function App() {
+const App = () => {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+
+  const [error, setError] = useState("");
+
+  const onClickButton = () => {
+    setError("");
+    if (username === "" || password === "") {
+      setError("Invalid Username and Password");
+    } else {
+      return "saved";
+    }
+    return "not";
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div>
+        <h2>Testing here</h2>
+        <span id="error">{error}</span>
+        <div>
+          <input
+            type="text"
+            name="username"
+            id="username"
+            placeholder="User Name"
+            value={username}
+            onChange={(event) => setUsername(event.target.value)}
+          />
+        </div>
+        <div>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Password"
+            value={password}
+            onChange={(event) => setPassword(event.target.value)}
+          />
+        </div>
+        <div>
+          <button id="login-button" onClick={() => onClickButton()}>
+            LOGIN
+          </button>
+        </div>
+      </div>
     </div>
   );
-}
+};
 
 export default App;

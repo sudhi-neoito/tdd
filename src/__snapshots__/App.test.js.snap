@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App should render correctly 1`] = `
+<div
+  className="App"
+>
+  <div>
+    <h2>
+      Testing here
+    </h2>
+    <span
+      id="error"
+    />
+    <div>
+      <input
+        id="username"
+        name="username"
+        onChange={[Function]}
+        placeholder="User Name"
+        type="text"
+        value=""
+      />
+    </div>
+    <div>
+      <input
+        id="password"
+        name="password"
+        onChange={[Function]}
+        placeholder="Password"
+        type="password"
+        value=""
+      />
+    </div>
+    <div>
+      <button
+        id="login-button"
+        onClick={[Function]}
+      >
+        LOGIN
+      </button>
+    </div>
+  </div>
+</div>
+`;
